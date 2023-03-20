@@ -221,3 +221,50 @@ function forbiddenLetter(letter , words){
 // cleanUpArray(["11"]) ➞ [[], [11]]
 // cleanUpArray(["7", "4", "8"]) ➞ [[4, 8], [7]]
 // cleanUpArray(["9", "4", "5", "8"]) ➞ [[4, 8], [9, 5]]
+
+
+
+  // 13. String Pairs
+  // Create a function that takes a string str and returns an array of two-paired characters. If the string has an odd number of characters, add an asterisk * in the final pair.
+  
+  // See the below examples for a better understanding:
+  
+  // Sample cases
+  // stringPairs("mubashir") ➞ ["mu", "ba", "sh", "ir"]
+  // stringPairs("edabit") ➞ ["ed", "ab", "it"]
+  // stringPairs("airforces") ➞ ["ai", "rf", "or", "ce", "s*"]
+  
+  function stringPairs(str) {
+    const result = [];
+    for (let i = 0; i < str.length; i += 2) {
+      const pair = str.slice(i, i + 2);
+      result.push(pair);
+    }
+    if (str.length % 2 !== 0) {
+      result[result.length - 1] += "*";
+    }
+    return result;
+  }
+  
+  console.log(stringPairs("mubashir"))
+  console.log(stringPairs("edabit"))
+  console.log(stringPairs("airforces"))
+  
+  // 14. Word Endings
+  // Create a function that adds a string ending to each member in an array.
+  
+  // Sample cases
+  // addEnding(["clever", "meek", "hurried", "nice"], "ly") 
+  // ➞ ["cleverly", "meekly", "hurriedly", "nicely"]
+  // addEnding(["new", "pander", "scoop"], "er")
+  // ➞ ["newer", "panderer", "scooper"]
+  // addEnding(["bend", "sharpen", "mean"], "ing")
+  // ➞ ["bending", "sharpening", "meaning"]
+  
+  function addEnding(arr, ending){
+      return arr.map(word => word + ending);
+      }
+      
+      console.log( addEnding(["clever", "meek", "hurried", "nice"], "ly"))
+       console.log(addEnding(["new", "pander", "scoop"], "er"))
+        console.log(addEnding(["bend", "sharpen", "mean"], "ing"))
